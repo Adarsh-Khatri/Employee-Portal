@@ -20,14 +20,10 @@ app.listen(PORT, () => console.log(`Listening on port http://localhost/${PORT}`)
 
 const { Client } = require("pg")
 const client = new Client({
-    // user: process.env.DB_USER,
-    // password: process.env.DB_PASSWORD,
-    // port: process.env.DB_PORT,
-    // host: process.env.DB_HOST,
-    user: "postgres",
-    password: "virgoPostgres001",
-    port: 5432,
-    host: "db.iltljszlsaempjnlkbmh.supabase.co",
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
+    host: process.env.DB_HOST,
     ssl: { rejectUnauthorized: false }
 });
 client.connect((err) => {
